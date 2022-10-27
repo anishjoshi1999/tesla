@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+.header {
+    background-image: url('./images/tesla.jpg');
+    color: white;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.header .nav-menu .nav-item .nav-link {
+    text-decoration: none;
+    color: white;
+}
+
+.header .nav-menu .nav-item .nav-link:hover {
+    color: #cc0000;
+    transition: .4s ease-in-out;
+}
+
+.header .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: whitesmoke;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+
+.header .navbar .nav-logo img {
+    height: 85px;
+    width: 100px;
+    margin-left: 10px;
+}
+
+.header .nav-menu {
+    display: flex;
+    align-items: center;
+
+}
+
+.header .nav-menu .nav-item {
+    list-style-type: none;
+    margin-right: 30px;
+}
+
+.main {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    top: 130px;
+    color: rgba(255, 255, 255, .6);
+}
+
+.main p {
+    margin-top: 25px;
+    text-align: center;
+    width: 60%;
+}
+
+.btn {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    font-weight: 500;
+    border-radius: 6px;
+    padding: 10px 20px;
+    text-decoration: none;
+
+}
+
+.btn:hover {
+    color: white;
+    border-color: white;
+    background-color: #cc0000;
+    transition: .4s ease-in-out;
+}
+
+.btn-special {
+    margin-top: 25px;
+}
+
+/* media queries */
+@media only screen and (max-width: 768px) {
+
+    .main {
+        display: none;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: #cc0000;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 2rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        margin-right: 20px;
+    }
+
+    .hamburger .bar {
+        background-color: #cc0000;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .header .nav-menu .nav-item .nav-link {
+        text-decoration: none;
+        color: white;
+    }
+
+    .header .nav-menu .nav-item .nav-link:hover {
+        color: #000000;
+        transition: .4s ease-in-out;
+    }
+}
