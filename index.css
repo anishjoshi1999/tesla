@@ -1,166 +1,138 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700;900&display=swap');
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Rubik', sans-serif;
+
 }
 
-.header {
-    background-image: url('./images/tesla.jpg');
+body {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+
+/* important for image fit */
+img {
+    max-width: 15%;
+    height: auto;
+}
+
+@media(min-width:60rem) {
+    img {
+        max-width: 7%;
+        position: absolute;
+        left: 30px;
+        bottom: -27px;
+    }
+}
+
+.container {
+    width: 95%;
+    margin: 0 auto;
+    padding-top: 5rem;
+}
+
+/* Typography */
+.title {
+    font-size: 2.5rem;
+}
+
+.title span {
+    font-weight: 300;
+    display: block;
+    font-size: .9em;
+}
+
+@media(min-width:60rem) {
+    .title {
+        font-size: 3.5rem;
+    }
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    font-size: 1.1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-width: 2px;
+    border-style: solid;
+    padding: .5em 1.75em;
+    font-weight: 500;
+}
+
+.button-accent {
     color: white;
-    height: 100vh;
+    border-color: #cc0000;
+    background-color: #cc0000;
+}
+
+.button-accent:hover,
+.button-accent:focus {
+    background-color: #cc0000;
+    color: #232323;
+}
+
+@media (min-width:60rem) {
+    .button {
+        font-size: 1.35rem;
+    }
+}
+
+/* Header */
+header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 1em;
+}
+
+/* navbar */
+nav ul {
+    list-style-type: none;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    font-weight: 900;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: .8rem;
+    padding: .5em;
+    color: white;
+}
+
+nav a:hover,
+nav a:focus {
+    color: #ddd;
+}
+
+@media(min-width:60rem) {
+    .logo {
+        float: left;
+    }
+
+    nav {
+        float: right;
+    }
+}
+
+/* Home-hero */
+.home-hero {
+    background-image: url(./images/tesla.jpg);
     background-size: cover;
     background-position: center;
+    padding: 10em 0;
+    color: #fff;
 }
 
-.header .nav-menu .nav-item .nav-link {
-    text-decoration: none;
-    color: white;
-}
-
-.header .nav-menu .nav-item .nav-link:hover {
-    color: #cc0000;
-    transition: .4s ease-in-out;
-}
-
-.header .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: whitesmoke;
-}
-
-.hamburger {
-    display: none;
-}
-
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background-color: #101010;
-}
-
-.header .navbar .nav-logo img {
-    height: 85px;
-    width: 100px;
-    margin-left: 10px;
-}
-
-.header .nav-menu {
-    display: flex;
-    align-items: center;
-
-}
-
-.header .nav-menu .nav-item {
-    list-style-type: none;
-    margin-right: 30px;
-}
-
-.main {
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    top: 130px;
-    color: rgba(255, 255, 255, .6);
-}
-
-.main p {
-    margin-top: 25px;
-    text-align: center;
-    width: 60%;
-}
-
-.btn {
-    background: transparent;
-    border: 2px solid white;
-    color: white;
-    font-weight: 500;
-    border-radius: 6px;
-    padding: 10px 20px;
-    text-decoration: none;
-
-}
-
-.btn:hover {
-    color: white;
-    border-color: white;
-    background-color: #cc0000;
-    transition: .4s ease-in-out;
-}
-
-.btn-special {
-    margin-top: 25px;
-}
-
-/* media queries */
-@media only screen and (max-width: 768px) {
-
-    .main {
-        display: none;
-    }
-
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 5rem;
-        flex-direction: column;
-        background-color: #cc0000;
-        width: 100%;
-        border-radius: 10px;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow:
-            0 10px 27px rgba(0, 0, 0, 0.05);
-    }
-
-    .nav-menu.active {
-        left: 0;
-    }
-
-    .nav-item {
-        margin: 2rem 0;
-    }
-
-    .hamburger {
-        display: block;
-        cursor: pointer;
-        margin-right: 20px;
-    }
-
-    .hamburger .bar {
-        background-color: #cc0000;
-    }
-
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .header .nav-menu .nav-item .nav-link {
-        text-decoration: none;
-        color: white;
-    }
-
-    .header .nav-menu .nav-item .nav-link:hover {
-        color: #000000;
-        transition: .4s ease-in-out;
+@media(min-width:60rem) {
+    .home-hero {
+        height: 100vh;
+        padding: 30vh;
     }
 }
